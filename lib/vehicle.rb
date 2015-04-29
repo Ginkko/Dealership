@@ -21,4 +21,16 @@ class Vehicle
     @@vehicles.push(self)
   end
 
+  define_method(:make) do
+    @make
+  end
+
+  def model
+    @model
+  end
+
+  def year
+    @year
+  end
+
 end
