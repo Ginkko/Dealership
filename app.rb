@@ -7,13 +7,17 @@ get('/') do
   erb(:index)
 end
 
+get('/vehicle_add') do
+  erb(:vehicle_add)
+end
+
+get('/vehicle_search') do
+  erb(:vehicle_search)
+end
+
 get('/vehicle_list') do
   @vehicle_list = Vehicle.all()
   erb(:vehicle_list)
-end
-
-get('/vehicle_add') do
-  erb(:vehicle_add)
 end
 
 post('/save_vehicle') do

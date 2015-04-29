@@ -46,5 +46,18 @@ describe('path from the vehicle add page to the vehicle list', {:type => :featur
     click_button('cancel')
     expect(page).to have_content('List of Vehicles:')
   end
+end
 
+describe('the path to the vehicle search page', {:type => :feature}) do
+  it('shows a welcome page with a link to the vehicle search page. On link click, shows a page with an input field and button for searching.') do
+    visit('/')
+    click_button('vehicle_search')
+    expect(page).to have_content('Search by ID:')
+  end
+
+  it('shows a page with a list of vehicles and a link to the vehicle search page. On link click, shows a page with an input field and button for searching.') do
+    visit('/vehicle_list')
+    click_button('vehicle_search')
+    expect(page).to have_content('Search by ID:')
+  end
 end
