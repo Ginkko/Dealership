@@ -40,4 +40,11 @@ describe('path from the vehicle add page to the vehicle list', {:type => :featur
     click_button('save_vehicle')
     expect(page).to have_content('Toyota')
   end
+
+  it('shows a page with a form to enter information about the new vehicle and a cancel button. On button click, shows a page with a list of vehicles.') do
+    visit('/vehicle_add')
+    click_button('cancel')
+    expect(page).to have_content('List of Vehicles:')
+  end
+
 end
