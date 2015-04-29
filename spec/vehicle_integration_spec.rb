@@ -59,7 +59,7 @@ describe('Integration-Wrapper') do
     #   click_button('vehicle_search')
     #   expect(page).to have_content('Search by ID:')
     # end
-  # end
+  #end
 
   describe('the path to the vehicle details page', {:type => :feature}) do
     it('shows a page with an input field for searching by index and a search button. On button click, shows a page listing the vehicle details.') do
