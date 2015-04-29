@@ -29,3 +29,12 @@ post('/save_vehicle') do
   @vehicle_list = Vehicle.all()
   erb(:vehicle_list)
 end
+
+get('/vehicle_details') do
+  @search_id = params.fetch('search_id').to_i()
+  @vehicle_list = Vehicle.all()
+  @make = @vehicle_list[@search_id].make()
+  @model = @vehicle_list[@search_id].model()
+  @year = @vehicle_list[@search_id].year().to_s()
+  erb(:vehicle_details)
+end
