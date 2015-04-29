@@ -11,3 +11,7 @@ get('/vehicle_list') do
   @vehicle_list = Vehicle.all()
   erb(:vehicle_list)
 end
+
+get('/vehicle_add') do
+  erb(:vehicle_add)
+end
