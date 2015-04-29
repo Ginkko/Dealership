@@ -13,6 +13,10 @@ class Dealership
     @@dealerships
   end
 
+  define_singleton_method(:clear) do
+    @@dealerships = []
+  end
+
   def save
     @@dealerships.push(self)
   end
