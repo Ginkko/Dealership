@@ -1,1 +1,6 @@
 <h1>List of Vehicles:</h1>
+<ul>
+   <% @vehicle_list.each() do |vehicle| %>
+    <li> <%= vehicle.make() %> </li>
+   <% end %>
+</ul>
