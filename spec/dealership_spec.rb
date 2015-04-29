@@ -1,6 +1,7 @@
 require('rspec')
 require('dealership')
 require('pry')
+require('vehicle')
 
 describe('Dealership') do
 
@@ -14,6 +15,14 @@ describe('Dealership') do
     end
   end
 
+  describe('.find') do
+    it('returns a dealership given its id number') do
+      test_dealership = Dealership.new('Bobs Deal-O-Rama')
+      test_dealership.save()
+      expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
+    end
+  end
+
   describe('#save') do
     it('adds a dealership to the dealership list') do
       test_dealership = Dealership.new('Reputable Dealer')
@@ -22,11 +31,13 @@ describe('Dealership') do
     end
   end
 
-  describe('.find') do
-    it('returns a dealership given its id number') do
+
+  describe('#add_vehicle') do
+    it('adds a vehicle to a dealerships car list.') do
+      test_vehicle = Vehicle.new('Toyota', 'Prius', 2000)
       test_dealership = Dealership.new('Bobs Deal-O-Rama')
-      test_dealership.save()
-      expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
+      test_dealership.add_vehicle(test_vehicle)
+      expect(test_dealership.cars()).to(eq([test_vehicle]))
     end
   end
 

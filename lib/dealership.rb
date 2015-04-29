@@ -7,6 +7,7 @@ class Dealership
      @name = name
      @id = @@id_counter
      @@id_counter += 1
+     @cars = []
    end
 
   define_singleton_method(:all) do
@@ -26,6 +27,10 @@ class Dealership
     return nil
   end
 
+  define_method(:add_vehicle) do |vehicle|
+    @cars.push(vehicle)
+  end
+
   def save
     @@dealerships.push(self)
   end
@@ -41,5 +46,5 @@ class Dealership
   def cars
     @cars
   end
-  
+
 end
