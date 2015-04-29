@@ -20,6 +20,10 @@ get('/vehicle_list') do
   erb(:vehicle_list)
 end
 
+get('/dealership_list') do
+  erb(:dealership_list)
+end
+
 post('/save_vehicle') do
   make = params.fetch('make')
   model = params.fetch('model')
