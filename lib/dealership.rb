@@ -38,4 +38,8 @@ class Dealership
     @id
   end
 
+  def cars
+    @cars
+  end
+  
 end
