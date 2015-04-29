@@ -10,6 +10,7 @@
     </div>
   </body>
   <foot>
+      <row>
       <div class='col-md-4 text-center'>
         <form action='/dealership_list' method='get'>
           <button class='btn btn-link' id='dealership_list' type='submit'>Dealership List</button>
@@ -20,13 +21,26 @@
           <button class='btn btn-link' id='dealership_add' type='submit'>Add New Dealership</button>
         </form>
       </div>
-
-      <!-- <div class ='col-md-4 text-center'>
+      <div class='col-md-4 text-center'>
+        <form action='/dealership_search' method='get'>
+          <button class='btn btn-link' id='dealership_search' type='submit'>Search for Dealership</button>
+        </form>
+      </div>
+    </row>
+      <!-- <row>
+      <div class='col-md-4 text-center'>
+        <form action='/dealership_vehicle_add' method='get'>
+          <button class='btn btn-link' id='dealership_vehicle_add' type='submit'>Add Vehicle to Dealership</button>
+        </form>
+      </row> -->
+      </div>
+        <div class ='col-md-4 text-center'>
         <form action='/vehicle_add' method='get'>
           <button class='btn btn-link' id='vehicle_add' type='submit'>Add a Vehicle</button>
         </form>
       </div>
-      <div class='col-md-4 text-center'>
+
+    <!--  <div class='col-md-4 text-center'>
         <form action='/vehicle_search' method='get'>
           <button class='btn btn-link' id='vehicle_search' type='submit'>Search</button>
         </form>

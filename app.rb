@@ -17,7 +17,9 @@ get('/vehicle_search') do
 end
 
 get('/vehicle_list') do
-  @vehicle_list = Vehicle.all()
+
+  id = params.fetch('dealership_search_id').to_i()
+  @vehicle_list = Dealership.find(id).cars()
   erb(:vehicle_list)
 end
 
@@ -39,6 +41,16 @@ get('/vehicle_details') do
   erb(:vehicle_details)
 end
 
+get('/dealership_find_id') do
+  dealership_id = params.fetch('dealer_search_id').to_i()
+  @dealership = Dealership.find(dealership_id)
+  erb(:vehicle_list)
+end
+
+get('/dealership_search') do
+  erb(:dealership_search)
+end
+
 post('/save_vehicle') do
   make = params.fetch('make')
   model = params.fetch('model')
@@ -55,4 +67,14 @@ post('/save_dealership') do
   dealership.save()
   @dealership_list = Dealership.all()
   erb(:dealership_list)
+end
+
+post('/save_dealership_vehicle') do
+  make = params.fetch('make')
+  model = params.fetch('model')
+  year = params.fetch('year').to_i()
+  vehicle = Vehicle.new(make, model, year)
+  @dealership = Dealership.find(params.fetch('dealership_id').to_i())
+  @dealership.add_vehicle(vehicle)
+  erb(:vehicle_list)
 end
