@@ -13,6 +13,14 @@ describe('Vehicle') do
     end
   end
 
+  describe('.find') do
+    it('it returns a vehicle given its id number') do
+      test_vehicle = Vehicle.new('Toyota', 'Prius', 2000)
+      test_vehicle.save()
+      expect(Vehicle.find(0)).to eq(test_vehicle)
+    end
+  end
+
   describe('#save') do
     it('adds a vehicle to the vehicle list') do
       test_vehicle = Vehicle.new('Toyota', 'Prius', 2000)
@@ -39,6 +47,13 @@ describe('Vehicle') do
     it('returns the year of a vehicle') do
       test_vehicle = Vehicle.new('Toyota', 'Prius', 2000)
       expect(test_vehicle.year()).to(eq(2000))
+    end
+  end
+
+  describe('#id') do
+    it('returns the id of a vehicle') do
+      test_vehicle = Vehicle.new('Pontiac', 'Vibe', 2003)
+      expect(test_vehicle.id()).to eq(0)
     end
   end
 
