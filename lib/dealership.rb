@@ -3,7 +3,7 @@ class Dealership
   @@dealerships = []
   @@id_counter = 0
 
-   define_method(:initialize) |name|
+   define_method(:initialize) do |name|
      @name = name
      @id = @@id_counter
      @@id_counter += 1
@@ -21,5 +21,12 @@ class Dealership
     @@dealerships.push(self)
   end
 
+  def name
+    @name
+  end
+
+  def id
+    @id
+  end
 
 end
